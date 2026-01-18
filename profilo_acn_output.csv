@@ -1,0 +1,3 @@
+"Asset_Critico","Livello_Rischio","Servizio_Erogato","Fornitore_Terza_Parte","Punto_Contatto","Email_Responsabile"
+"Database ERP","Critica","Gestione Pagamenti","CloudProvider SPA","Mario Rossi","m.rossi@azienda.it"
+"Router Gateway","Alta","Gestione Pagamenti",NULL,"Anna Bianchi","a.bianchi@azienda.it"
