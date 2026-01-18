@@ -1,0 +1,22 @@
+DOCUMENTAZIONE TECNICA - PW 19: PRIVACY E SICUREZZA AZIENDALE
+
+1. MODELLO CONCETTUALE E ER DIAGRAM
+Il database è progettato per centralizzare dati NIS2. 
+L'entità 'Asset' è il fulcro del sistema e lega Servizi, Responsabili e Fornitori.
+
+2. DIZIONARIO DATI (Sintesi)
+- Asset: Catalogazione beni critici (ID, Nome, Tipo, Criticità).
+- Responsabile: Anagrafica proprietari asset (Punti di contatto).
+- Fornitore_Terzo: Gestione dipendenze esterne (Supply Chain).
+- Servizio: Servizi critici erogati dall'organizzazione.
+
+3. NORMALIZZAZIONE E TRADE-OFF
+- Normalizzazione: Il DB rispetta la 3NF. I contatti (Responsabili) sono separati
+  dagli asset per evitare ridondanze e anomalie di aggiornamento.
+- Trade-off: Per lo storico è stato usato il formato JSONB nella tabella History. 
+  Questo permette di conservare i dati anche se la struttura della tabella 
+  principale muta nel tempo (Flessibilità vs Complessità query).
+
+4. ISTRUZIONI DEPLOY
+- Database: PostgreSQL (v12+).
+- Eseguire in ordine: schema_db.sql -> popolamento_test.sql -> esportazione_acn.sql.
